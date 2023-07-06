@@ -1,62 +1,147 @@
-# This is a sample Python script.
+"""
+Problem
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+Find Pivot Index Given alist
+of
+integers
+numbers, calculate
+the
+pivot
+index
+of
+this
+list.
+
+The
+pivot
+index is the
+index
+where
+the
+sum
+of
+all
+the
+numbers
+strictly
+to
+the
+left
+of
+the
+index is equal
+to
+the
+sum
+of
+all
+the
+numbers
+strictly
+to
+the
+index
+'s right. If the index is on the left edge of the array, then the left sum is 0 because there are no elements to the left. This also applies to the right edge of the array.
+
+Return
+the
+leftmost
+pivot
+index.If
+no
+such
+index
+exists,
+return -1.
+
+Example
+One
+{
+    "numbers": [2, 3, 1, -1, 1, 1, 4]
+}
+Output:
+
+2
+Considering
+index
+2 as pivot
+index, left
+subarray = [2, 3] and right
+subarray = [-1, 1, 1, 4].Here, sum(left
+subarray) = sum(right
+subarray) = 5.
+
+Here, index
+4 is also
+a
+valid
+pivot
+index.But
+index
+2 is leftmost.
+
+Example
+Two
+{
+    "numbers": [2, 3, 5]
+}
+Output:
+
+-1
+Example
+Three
+{
+    "numbers": [0, 1, -1]
+}
+Output:
+
+0
+Notes
+Constraints:
+
+1 <= size
+of
+the
+input
+list <= 104
+-105 <= any
+element
+of
+the
+input
+list <= 105
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
+"""
 
 
-def get_intersection_with_maintained_frequency(a, b):
+def get_pivot_index(numbers):
     """
     Args:
-     a(list_int32)
-     b(list_int32)
+     numbers(list_int32)
     Returns:
-     list_int32
+     int32
     """
     # Write your code here.
-    result = []
-    freq_a = {}
-    freq_b = {}
-    freq_r = {}
-    for count1 in range(0, len(a)):
-        if a[count1] in freq_a.keys():
-            freq_a[a[count1]] += 1
-        else:
-            freq_a[a[count1]] = 1
 
-    for count2 in range(0, len(b)):
-        if b[count2] in freq_b.keys():
-            freq_b[b[count2]] += 1
-        else:
-            freq_b[b[count2]] = 1
-    for item1 in freq_a.keys():
-        for item2 in freq_b.keys():
-            if item1 == item2:
-                multiplier = min(freq_a[item1], freq_b[item2])
-                for element in range(0, multiplier):
-                    result.append(item1)
-
-    return result, freq_a, freq_b, freq_r
+    return 0
 
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
-    a = [7, 7, 14, 92, 14, 92, 92]
-    b = [0, 0, 92, 92, 7]
-    # a = [1]
-    # b = [1]
-    result, freq_a, freq_b, freq_r = get_intersection_with_maintained_frequency(a, b)
+
+    numbers = [2, 3, 1, -1, 1, 1, 4]
+    result = get_pivot_index(numbers)
 
     print(result)
-    print(freq_a.keys())
-    print(freq_a.values())
-    print(freq_b.keys())
-    print(freq_b.values())
-    print(freq_r.keys())
-    print(freq_r.values())
+
+
+
+
+# for item1 in freq_a.keys():
+#     for item2 in freq_b.keys():
+#         if item1 == item2:
+#             multiplier = min(freq_a[item1], freq_b[item2])
+#             for element in range(0, multiplier):
+#                 result.append(item1)
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
