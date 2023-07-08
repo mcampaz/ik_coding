@@ -3,25 +3,55 @@
 """
 Problem:
 
+First Occurrence Of A Character
+Find the first occurrence of a given character in a given string.
+
+Example One
+{
+"s": "interview",
+"to_find": "e"
+}
+Output:
+
+3
+Example Two
+{
+"s": "kickstart",
+"to_find": "n"
+}
+Output:
+
+-1
+Notes
+Return -1 if the character is not present.
+
+Constraints:
+
+0 <= length of string <= 104.
+Given string contains lower case English alphabets only.
+The given character can be any lower case English alphabet.
 """
 
 
-def problem_function(numbers):
+def find_first_occurrence(s, to_find):
     """
     Args:
-     numbers(list_int32)
+     s(str)
+     to_find(char)
     Returns:
      int32
     """
     # Write your code here.
-
-    return 0
+    for i in range(0, len(s)):
+        if s[i] == to_find:
+            return i
+    return -1
 
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    numbers = [1, 2, -3, 1, 2, 3, -6, 1, 2, 3, 4, -10, 0, -100000, 100000] # 12
-
-    result = problem_function(numbers)
+    s = "interview"
+    to_find = 'e'
+    result = find_first_occurrence(s, to_find)
 
     print(result)
